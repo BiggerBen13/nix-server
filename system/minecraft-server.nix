@@ -9,7 +9,7 @@ in
     services.minecraft-servers.servers.statech = {
         enable = true;
         eula = true;
-        package = pkgs.fabricServers.fabric-1_19_4-0_16_14;
+        package = pkgs.fabricServers.fabric-1_19_2-0_16_10;
         files = {
             "mods" = "${statech}/mods";
             "kubejs" = "${statech}/kubejs";
