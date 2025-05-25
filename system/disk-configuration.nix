@@ -33,20 +33,20 @@
         };
       };
     };
-  };
-  lvm_vg = {
-    pool = {
-      type = "lvm_vg";
-      lvs = {
-        root = {
-          size = "100%FREE";
-          content = {
-            type = "filesystem";
-            format = "ext4";
-            mountpoint = "/";
-            mountOptions = [
-              "defaults"
-            ];
+    lvm_vg = {
+      pool = {
+        type = "lvm_vg";
+        lvs = {
+          root = {
+            size = "100%FREE";
+            content = {
+              type = "filesystem";
+              format = "ext4";
+              mountpoint = "/";
+              mountOptions = [
+                "defaults"
+              ];
+            };
           };
         };
       };
