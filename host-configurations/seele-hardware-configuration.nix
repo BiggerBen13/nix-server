@@ -9,5 +9,5 @@
 
     networking.useDHCP = lib.mkDefault true;
 
-    nixpkgs.hostPlattform = lib.mkDefault "x86_64-linux";
+    nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 }
