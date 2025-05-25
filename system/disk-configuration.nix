@@ -1,5 +1,5 @@
 {lib, ...}: {
-# Example to create a bios compatible gpt partition
+  # Example to create a bios compatible gpt partition
   disko.devices = {
     disk.nixos = {
       device = lib.mkDefault "/dev/sda";
@@ -29,6 +29,24 @@
               type = "lvm_pv";
               vg = "pool";
             };
+          };
+        };
+      };
+    };
+  };
+  lvm_vg = {
+    pool = {
+      type = "lvm_vg";
+      lvs = {
+        root = {
+          size = "100%FREE";
+          content = {
+            type = "filesystem";
+            format = "ext4";
+            mountpoint = "/";
+            mountOptions = [
+              "defaults"
+            ];
           };
         };
       };
