@@ -5,7 +5,7 @@
         modules = [
             ../system/disk-configuration.nix
             ../system/sshd.nix
-            inputs.disko.nixModules.disko
+            inputs.disko.nixosModules.disko
             ../host-configurations/seele.nix
         ];
 }
