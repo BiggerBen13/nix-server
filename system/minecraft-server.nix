@@ -1,20 +1,33 @@
-{pkgs, lib, ...}@inputs : 
-let 
-    statech = pkgs.fetchPackwizModpack {
-        url = "https://raw.githubusercontent.com/TheStaticVoid/StaTech-Industry/d0fc315c67f3eba1f720676b977e5d1bca9f00f0/pack.toml";
-        packHash = "sha256-d0fc315c67f3eba1f720676b977e5d1bca9f00f0";
-    };
+{nixpkgs, pkgs, lib, ...}@inputs :
+let
+statech = pkgs.fetchzip {
+        url = "https://mediafiles.forgecdn.net/files/6112/165/StaTech%201.1.15%20Server%20Pack.zip";
+        hash = "sha256-SiSoxqXPXxoO5X3U6nLPECkUEEUAm/z6dpkVaDUK9Dg=";
+        stripRoot = false;
+};
 in
 {
-    services.minecraft-servers.servers.statech = {
-        enable = true;
-        eula = true;
-        package = pkgs.fabricServers.fabric-1_19_2-0_16_10;
-        files = {
-            "mods" = "${statech}/mods";
-            "kubejs" = "${statech}/kubejs";
-            "config" = "${statech}/config";
-            "defaultconfigs" = "${statech}/defaultconfigs";
+        nixpkgs.config.allowUnfree = true;
+
+        services.minecraft-servers = {
+                enable = true;
+                eula = true;
+                servers.statech-industries = {
+                        enable = true;
+                        openFirewall = true;
+                        package = pkgs.fabricServers.fabric-1_19_2;
+                        symlinks = {
+                                "mods" = "${statech}/mods";
+                        };
+                        files = {
+                                "kubejs" = "${statech}/kubejs";
+                                "config" = "${statech}/config";
+                                "defaultconfigs" = "${statech}/defaultconfigs";
+                        };
+                        serverProperties = {
+                                server-port = 25565;
+                                motd = "StaTech Industries :3";
+                        };
+                };
         };
-    };
 }
