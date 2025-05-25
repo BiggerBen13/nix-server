@@ -1,7 +1,7 @@
 {lib, ...}: {
 # Example to create a bios compatible gpt partition
   disko.devices = {
-    disk = {
+    disk.nixos = {
       device = lib.mkDefault "/dev/sda";
       type = "disk";
       content = {
