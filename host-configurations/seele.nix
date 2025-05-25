@@ -1,6 +1,8 @@
 {lib, config, pkgs, ...}@inputs: {
     imports = [./seele-hardware-configuration.nix];
 
+    nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
+
     networking.hostName = "seele";
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
