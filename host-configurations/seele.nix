@@ -1,4 +1,5 @@
 {lib, config, pkgs, ...}@inputs: {
+    imports = [./seele-hardware-configuration.nix];
 
     networking.hostName = "seele";
 
