@@ -1,5 +1,5 @@
-{lib, ...}@inputs: {
-    seele = lib.nixosSystem {
+{lib, ...}@inputs: 
+    lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = inputs;
         modules = [
@@ -8,5 +8,4 @@
             inputs.disko.nixModules.disko
             ../host-configurations/seele.nix
         ];
-    };
 }
