@@ -2,7 +2,6 @@
     services.xonotic = {
         enable = true;
         openFirewall = true;
-        dataDir = "/srv/xonotic";
         settings = {
             port = 26000;
             sv_public = 0;
