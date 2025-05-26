@@ -10,5 +10,6 @@
             ../system/sshd.nix
             ../host-configurations/seele.nix
             ../system/minecraft-server.nix
+            ../system/xonotic-server.nix
         ];
 }
