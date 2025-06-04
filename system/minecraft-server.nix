@@ -5,15 +5,27 @@ statech = pkgs.fetchzip {
         hash = "sha256-SiSoxqXPXxoO5X3U6nLPECkUEEUAm/z6dpkVaDUK9Dg=";
         stripRoot = false;
 };
+adrena = pkgs.fetchPackwizModpack {
+        url = "https://raw.githack.com/intergrav/Adrenaline/main/versions/fabric/1.21.1/pack.toml";
+
+};
 in
 {
+        users.users.minecraft = {
+            isSystemUser = true;
+            home = "/home/minecraft";
+            description = "minecraft-server runner";
+            
+        };
+
         nixpkgs.config.allowUnfree = true;
 
         services.minecraft-servers = {
                 enable = true;
                 eula = true;
+                user = "minecraft";
                 servers.statech-industries = {
-                        enable = true;
+                        enable = false;
                         openFirewall = true;
                         package = pkgs.fabricServers.fabric-1_19_2;
                         symlinks = {
@@ -29,5 +41,9 @@ in
                                 motd = "StaTech Industries :3";
                         };
                 };
+                # servers.vanilla = {
+                #         enable = true;
+                #
+                # };
         };
 }
