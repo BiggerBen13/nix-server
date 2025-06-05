@@ -53,8 +53,8 @@ in
                                 motd = "Bens Minecraft Server";
                                 correct-player-movement = false;
                                 difficulty = "hard";
-                                rcon.port = 27777;
-                                rcon.password = "meow";
+                                "rcon.port" = 27777;
+                                "rcon.password" = "meow";
                                 rcon-enable = true;
                         };
                 };
