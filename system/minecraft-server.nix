@@ -55,7 +55,8 @@ in
                                 difficulty = "hard";
                                 "rcon.port" = 27777;
                                 "rcon.password" = "meow";
-                                rcon-enable = true;
+                                enable-rcon = true;
+                                enable-status = false;
                         };
                 };
         };
