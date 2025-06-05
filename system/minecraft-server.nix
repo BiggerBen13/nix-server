@@ -7,7 +7,7 @@ statech = pkgs.fetchzip {
 };
 adrena = pkgs.fetchPackwizModpack {
         url = "https://raw.githack.com/intergrav/Adrenaline/main/versions/fabric/1.21.1/pack.toml";
-
+        hash = "sha256-wL/2wo0C/rZnT+H/mBYEUUzip9Z5squkeMsK8pWrscM=";
 };
 in
 {
