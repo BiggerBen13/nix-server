@@ -41,9 +41,20 @@ in
                                 motd = "StaTech Industries :3";
                         };
                 };
-                # servers.vanilla = {
-                #         enable = true;
-                #
-                # };
+                servers.vanilla = {
+                        enable = true;
+                        openFirewall = true;
+                        package = pkgs.fabricServers.fabric-1_21_1;
+                        symlinks = {
+                            "mods" = "${adrena}/mods";
+                        };
+                        files = {
+                                "config" = "${statech}/config";
+                        };
+                        serverProperties = {
+                                server-port = 25565;
+                                motd = "Bens Minecraft Server";
+                        };
+                };
         };
 }
