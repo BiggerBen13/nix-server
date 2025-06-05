@@ -13,6 +13,10 @@ in
 {
         nixpkgs.config.allowUnfree = true;
 
+        environment.systemPackages = with pkgs; [
+            mcrcon
+        ];
+
         services.minecraft-servers = {
                 enable = true;
                 eula = true;
@@ -47,6 +51,10 @@ in
                         serverProperties = {
                                 server-port = 25565;
                                 motd = "Bens Minecraft Server";
+                                correct-player-movement = false;
+                                difficulty = "hard";
+                                rcon-port = 27777;
+                                rcon-password = "meow";
                         };
                 };
         };
