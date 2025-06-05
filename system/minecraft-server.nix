@@ -14,8 +14,7 @@ in
         users.users.minecraft = {
             isSystemUser = true;
             home = "/home/minecraft";
-            description = "minecraft-server runner";
-            
+            # description = "minecraft-server runner";
         };
 
         nixpkgs.config.allowUnfree = true;
